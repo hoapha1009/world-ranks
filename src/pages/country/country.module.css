@@ -63,6 +63,10 @@
   
   .details_panel_borders {
     padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    justify-content: stretch;
   }
   
   .details_panel_borders_container {

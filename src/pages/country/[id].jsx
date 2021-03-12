@@ -117,32 +117,36 @@ const Country = ({ country }) => {
                                 Neighbouring Countries
                             </div>
 
-                            <div
-                                className={
-                                    styles.details_panel_borders_container
-                                }
-                            >
-                                {borders.length > 0
-                                    ? borders.map(({ flag, name }) => (
-                                          <div
-                                              key={name}
-                                              className={
-                                                  styles.details_panel_borders_country
-                                              }
-                                          >
-                                              <img src={flag} alt={name}></img>
+                            {borders.length > 0 ? (
+                                <div
+                                    className={
+                                        styles.details_panel_borders_container
+                                    }
+                                >
+                                    {borders.map(({ flag, name }) => (
+                                        <div
+                                            key={name}
+                                            className={
+                                                styles.details_panel_borders_country
+                                            }
+                                        >
+                                            <img src={flag} alt={name}></img>
 
-                                              <div
-                                                  className={
-                                                      styles.details_panel_borders_name
-                                                  }
-                                              >
-                                                  {name}
-                                              </div>
-                                          </div>
-                                      ))
-                                    : "Nothing"}
-                            </div>
+                                            <div
+                                                className={
+                                                    styles.details_panel_borders_name
+                                                }
+                                            >
+                                                {name}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <span style={{ marginLeft: "auto" }}>
+                                    Nothing
+                                </span>
+                            )}
                         </div>
                     </div>
                 </div>
