@@ -1,12 +1,23 @@
-.container {
+.counts {
+    margin: 12px 0;
+    color: var(--text-color-secondary);
+  }
   
-}
-
-.main {
+  .inputContainer {
+    margin-bottom: 40px;
+  }
   
-}
-
-.footer {
-
+  @media screen and (min-width: 720px) {
+    .inputContainer {
+      display: flex;
+      justify-content: space-between;
+    }
   
-}
+    .counts {
+      flex: 1;
+    }
+  
+    .input {
+      flex: 2;
+    }
+  }
