@@ -41,3 +41,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-size: 16px;
+}
