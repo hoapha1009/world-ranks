@@ -43,8 +43,8 @@ const SortArrow = ({ direction }) => {
 };
 
 const CountriesTable = ({ countries }) => {
-    const [direction, setDirection] = useState();
-    const [value, setValue] = useState();
+    const [direction, setDirection] = useState<string>();
+    const [value, setValue] = useState<string>();
 
     const orderedCountries = orderBy(countries, value, direction);
 

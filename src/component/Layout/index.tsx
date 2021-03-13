@@ -2,9 +2,14 @@ import Head from "next/head";
 import styles from "./Layout.module.css";
 import Link from "next/link";
 import { Brightness6Rounded } from "@material-ui/icons";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
-const Layout = ({ children, title = "World Rank" }) => {
+type P = {
+    children: ReactNode;
+    title: String;
+};
+
+const Layout: React.FC<P> = ({ children, title }) => {
     const [theme, setTheme] = useState("light");
 
     useEffect(() => {

@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { GetStaticProps } from "next";
+import React, { useState } from "react";
 import CountriesTable from "../component/CountriesTable";
 import Layout from "../component/Layout";
 import SearchInput from "../component/SearchInput";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ countries }) {
-    const [keyword, setKeyword] = useState("");
+    const [keyword, setKeyword] = useState<string>("");
 
     const filteredCountries = countries.filter((c) => {
         return (
@@ -15,14 +16,14 @@ export default function Home({ countries }) {
         );
     });
 
-    const onHandleChange = (e) => {
+    const onHandleChange = (e: React.FormEvent<HTMLInputElement>): void => {
         e.preventDefault();
 
-        setKeyword(e.target.value.toLowerCase());
+        setKeyword(e.currentTarget.value.toLowerCase());
     };
 
     return (
-        <Layout>
+        <Layout title="World Rank">
             <div className={styles.counts}>
                 Found {countries.length} countries
             </div>
@@ -37,7 +38,7 @@ export default function Home({ countries }) {
     );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     const res = await fetch("https://restcountries.eu/rest/v2/all");
     const countries = await res.json();
 

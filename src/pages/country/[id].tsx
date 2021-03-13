@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./country.module.css";
 import Layout from "../../component/Layout";
+import { GetServerSideProps } from "next";
 
 const getCountry = async (id) => {
     const res = await fetch(`https://restcountries.eu/rest/v2/alpha/${id}`);
@@ -155,7 +156,7 @@ const Country = ({ country }) => {
     );
 };
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const country = await getCountry(params.id);
 
     return {
