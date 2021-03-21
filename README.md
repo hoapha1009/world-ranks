@@ -1,4 +1,4 @@
-# Crypto Website
+# World Ranks Website
 
 Building website for World Ranks!
 
